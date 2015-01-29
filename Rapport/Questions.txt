@@ -1,0 +1,19 @@
+eller så tar du typ 2 styrbeteenden tsm med A*
+
+och sen D* 
+
+och så jämför du resultaten
+
+Funderar eventuellt på att kanske kolla på styrbeteenden kontra d* i dyunamiska miljöer
+
+Evaluering av styrbeteende hos enheter i ett RTS-spel
+
+Svärm-AI/Styrbeteenden kontra A* hos enheter i ett RTS-spel
+
+Svärm-AI för navigering av enheter i ett RTS-spel
+
+Hur förhåller sig metod x till metod y, som bägge har till avseende att styra enheter i realtid i ett RTS spel, med avseende på a, b, c
+
+Hur förhåller sig implementation a till implementation b med avseende på u, v, w
+
+

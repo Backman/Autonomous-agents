@@ -1,0 +1,41 @@
+http://epubl.ltu.se/1404-5494/2010/010/LTU-HIP-EX-10010-SE.pdf
+http://myplace.frontier.com/~kutsenok/sitebuildercontent/sitebuilderfiles/SwarmAI-Short05.pdf
+https://mehmetakifsonmez.files.wordpress.com/2013/12/ai-game-engine-programming.pdf
+http://ldc.usb.ve/~vtheok/cursos/ci5325/lecturas/Artificial%20Intelligence%20for%20Games.pdf
+https://howtorts.github.io/
+
+MONTE-CARLO PLANNING FOR RTS - http://pst.istc.cnr.it/PlanSIG10/proceedings/paper%2011.pdf
+
+An Improved Pathfinding Algorithm in RTS Games - http://download.springer.com.login.libraryproxy.his.se/static/pdf/791/chp%253A10.1007%252F978-3-642-21411-0_1.pdf?auth66=1422566114_a3f22ad002f1d83f7f3f65de682924a5&ext=.pdf
+
+Using Potential Fields in a Real-time Strategy Game Scenario (Tutorial) - http://aigamedev.com/open/tutorials/potential-fields/
+
+Crowd Simulation through Steering Behaviors and Flow Fields - http://grahampentheny.com/wp-content/uploads/2013/03/The-Next-Vector.pdf
+
+Flow Field Pathfinding with Flocking - http://coldconstructs.com/2013/10/flow-field-pathfinding-with-flocking/
+
+Path-Planning for RTS Games Based on Potential Fields - http://download.springer.com.login.libraryproxy.his.se/static/pdf/49/chp%253A10.1007%252F978-3-642-16958-8_38.pdf?auth66=1422568008_371fb0440c12d27f76b9fe3b4c51f46c&ext=.pdf
+
+Using Multi-agent Potential Fields in Real-time Strategy Games -http://www.aamas-conference.org/Proceedings/aamas08/proceedings/pdf/paper/AAMAS08_0269.pdf
+
+Pathfinding and Local Avoidance for RPG/RTS Games using Unity - http://www.gamedev.net/page/resources/_/technical/game-programming/pathfinding-and-local-avoidance-for-rpgrts-games-using-unity-r3703
+
+STEERING BEHAVIOURS ARE DOING IT WRONG - https://andrewfray.wordpress.com/2013/02/20/steering-behaviours-are-doing-it-wrong/
+
+Gamla exjobb:
+UTVÄRDERING AV STYRBETEENDEN FÖR GRUPPER AV NAVIGERANDE AGENTER -  http://his.diva-portal.org/smash/get/diva2:626065/FULLTEXT01.pdf
+
+UTVÄRDERING AV KOMBINATIONER AV STYRBETEENDEN FÖR GRUPPER AV NAVIGERANDE AGENTER -  http://his.diva-portal.org/smash/get/diva2:546646/FULLTEXT01.pdf
+
+Medhjälpar-AI i spel : Skapande av en dynamiskt anpassningsbar AI i spel med hjälp av en genetisk algoritm  - http://his.diva-portal.org/smash/get/diva2:531905/FULLTEXT01.pdf
+
+EN UNDERSÖKNING OMKOLLABORATIVT BETEENDE ISVÄRM AI : En jämförelse mellan tvåvägplaneringstekniker som skaparsamarbete mellan agenter. - http://his.diva-portal.org/smash/get/diva2:549933/FULLTEXT01.pdf
+
+SVÄRM-AI FÖR TAKTISKA BESLUT HOS GRUPPER AV FIENDER - http://his.diva-portal.org/smash/get/diva2:643896/FULLTEXT01.pdf
+
+BÖCKER:
+AI FOR GAMES - http://ldc.usb.ve/~vtheok/cursos/ci5325/lecturas/Artificial%20Intelligence%20for%20Games.pdf
+AI GAME ENIGNE PROGRAMMING - https://mehmetakifsonmez.files.wordpress.com/2013/12/ai-game-engine-programming.pdf
+
+
+
