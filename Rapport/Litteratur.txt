@@ -16,7 +16,7 @@ Flow Field Pathfinding with Flocking - http://coldconstructs.com/2013/10/flow-fi
 
 Path-Planning for RTS Games Based on Potential Fields - http://download.springer.com.login.libraryproxy.his.se/static/pdf/49/chp%253A10.1007%252F978-3-642-16958-8_38.pdf?auth66=1422568008_371fb0440c12d27f76b9fe3b4c51f46c&ext=.pdf
 
-Using Multi-agent Potential Fields in Real-time Strategy Games -http://www.aamas-conference.org/Proceedings/aamas08/proceedings/pdf/paper/AAMAS08_0269.pdf
+Using Multi-agent Potential Fields in Real-time Strategy Games -  http://www.aamas-conference.org/Proceedings/aamas08/proceedings/pdf/paper/AAMAS08_0269.pdf
 
 Pathfinding and Local Avoidance for RPG/RTS Games using Unity - http://www.gamedev.net/page/resources/_/technical/game-programming/pathfinding-and-local-avoidance-for-rpgrts-games-using-unity-r3703
 
