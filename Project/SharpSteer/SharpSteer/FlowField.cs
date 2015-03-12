@@ -12,6 +12,8 @@ namespace SharpSteer
 		public Vector2[,] Field { get; private set; }
 		public int Cols { get; private set; }
 		public int Rows { get; private set; }
+		public int Width { get; private set; }
+		public int Height { get; private set; }
 		public int Resolution { get; private set; }
 
 		public FlowField(int width, int height, int resolution)
@@ -20,10 +22,13 @@ namespace SharpSteer
 
 			Cols = width / resolution;
 			Rows = height / resolution;
-			Field = new Vector2[Cols, Rows];
+			Width = width;
+			Height = height;
+			Field = new Vector2[width, height];
 		}
-		float xoff;
-		float yoff;
+
+		float xoff = 0f;
+		float yoff = 0f;
 		public void UpdateField(Vector2 targetPos)
 		{
 			for (int i = 0; i < Cols; ++i)
@@ -42,8 +47,8 @@ namespace SharpSteer
 
 		public Vector2 Lookup(Vector2 lookup)
 		{
-			int col = Math.Min((int)lookup.X / Resolution, Cols - 1);
-			int row = Math.Min((int)lookup.Y / Resolution, Rows - 1);
+			int col = Math.Min((int)lookup.X / Resolution, Width - 1);
+			int row = Math.Min((int)lookup.Y / Resolution, Height - 1);
 
 			Vector2 v = Field[col, row];
 			Vector2 ret = new Vector2(v.X, v.Y);

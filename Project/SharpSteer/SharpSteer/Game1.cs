@@ -21,7 +21,7 @@ namespace SharpSteer
 		Agent agent;
 		Grid grid;
 		Path path;
-		int gridSize = 10;
+		int gridSize = 80;
 		int windowWidth = 1280;
 		int windowHeight = 720;
 		public static FlowField flowField;
