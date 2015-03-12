@@ -1,0 +1,549 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"gam",
+				"Game	class"
+			],
+			[
+				"commandF",
+				"commandFuncs	statement"
+			],
+			[
+				"sl",
+				"sqlite3	module"
+			],
+			[
+				"desc",
+				"description	function"
+			],
+			[
+				"con",
+				"printContent	function"
+			],
+			[
+				"re",
+				"requirements"
+			],
+			[
+				"item",
+				"items	module"
+			],
+			[
+				"def",
+				"defineDirection	function"
+			],
+			[
+				"dir",
+				"directions	statement"
+			],
+			[
+				"in",
+				"__init__	function"
+			],
+			[
+				"pl",
+				"Player	module"
+			],
+			[
+				"move",
+				"MoveNorth"
+			],
+			[
+				"par",
+				"parse_args	function"
+			],
+			[
+				"Const",
+				"Constraints"
+			],
+			[
+				"Cont",
+				"Constraint"
+			],
+			[
+				"poin",
+				"point2"
+			],
+			[
+				"po",
+				"point1"
+			],
+			[
+				"up",
+				"update"
+			],
+			[
+				"PointM",
+				"PointMass"
+			],
+			[
+				"upperleg",
+				"upperLegs"
+			],
+			[
+				"sho",
+				"shoulderYPos"
+			],
+			[
+				"vetr",
+				"vertCol"
+			],
+			[
+				"scr",
+				"scr"
+			],
+			[
+				"v",
+				"Voronoi	Voronoi"
+			],
+			[
+				"triangu",
+				"triangulate"
+			],
+			[
+				"tria",
+				"triangulate"
+			],
+			[
+				"t",
+				"Text	Text"
+			],
+			[
+				"rect",
+				"Rectangle"
+			],
+			[
+				"random",
+				"random_int	function"
+			],
+			[
+				"loadText",
+				"loadTexture	function"
+			],
+			[
+				"Sp",
+				"Sprite"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 173.0,
+		"selected_items":
+		[
+			[
+				"python",
+				"Set Syntax: Python"
+			],
+			[
+				"gls",
+				"Set Syntax: GLSL"
+			],
+			[
+				"glsl",
+				"Set Syntax: GLSL"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"install	",
+				"Package Control: Install Package"
+			],
+			[
+				"json",
+				"Set Syntax: JSON"
+			],
+			[
+				"repo",
+				"Package Control: Add Repository"
+			],
+			[
+				"addre",
+				"Package Control: Add Repository"
+			],
+			[
+				"c++",
+				"Set Syntax: C++"
+			],
+			[
+				"dki",
+				"DKit: Create Project From DUB Package File"
+			],
+			[
+				"dub",
+				"DKit: Create Project From DUB Package File"
+			],
+			[
+				"dkit",
+				"DKit: Restart DCD Autocompletion Server"
+			],
+			[
+				"dkr",
+				"DKit: Restart DCD Autocompletion Server"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"set",
+				"Set Syntax: D"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os; pr='Preferences.sublime-settings'; ip='ignored_packages'; n='Package Control'; s=sublime.load_settings(pr); ig=s.get(ip); ig.append(n); s.set(ip,ig); sublime.save_settings('Preferences.sublime-settings'); pf=n+'.sublime-package'; urllib.request.install_opener(urllib.request.build_opener(urllib.request.ProxyHandler())); by=urllib.request.urlopen('https://packagecontrol.io/'+pf.replace(' ','%20')).read(); open(os.path.join(sublime.installed_packages_path(),pf),'wb').write(by); ig.remove(n); s.set(ip,ig); sublime.save_settings(pr); print('Package Control: 3.0.0 upgrade successful!')",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/Arvid/Documents/GitHub/Autonomous-agents/LuxeSteer/src/Main.hx",
+		"/C/Users/Arvid/Documents/GitHub/Autonomous-agents/LuxeSteer/src/luxeSteer/Vehicle.hx",
+		"/C/Users/Arvid/Documents/GitHub/Autonomous-agents/LuxeSteer/src/luxeSteer/Behaviours/Behaviour.hx",
+		"/C/Users/Arvid/Documents/GitHub/Autonomous-agents/LuxeSteer/src/luxeSteer/Behaviours/Vehicle.hx",
+		"/C/Users/Arvid/AppData/Roaming/Sublime Text 3/Packages/haxe_completion/haxe_completion.sublime-settings",
+		"/C/Users/Arvid/Documents/GitHub/Autonomous-agents/LuxeSteer/src/LuxeSteer/Vehicle.hx",
+		"/C/Users/Arvid/Documents/GitHub/Autonomous-agents/LuxeSteer/project.flow",
+		"/C/Program Files/Cygwin/home/BarryB/dbwebb-kurser/python/me/kmom10/adventure/fas/connection.py",
+		"/C/Program Files/Cygwin/home/BarryB/dbwebb-kurser/python/me/kmom10/adventure/fas/room.py",
+		"/C/Program Files/Cygwin/home/BarryB/dbwebb-kurser/python/me/kmom10/adventure/fas/player.py",
+		"/C/Program Files/Cygwin/home/BarryB/dbwebb-kurser/python/me/kmom10/adventure/fas/lockable.py",
+		"/C/Program Files/Cygwin/home/BarryB/dbwebb-kurser/python/me/kmom10/adventure/fas/items.py",
+		"/C/Program Files/Cygwin/home/BarryB/dbwebb-kurser/python/me/kmom10/adventure/fas/container.py",
+		"/C/Program Files/Cygwin/home/BarryB/dbwebb-kurser/python/me/kmom10/adventure/fas/pruttapa/item.py",
+		"/C/Program Files/Cygwin/home/BarryB/dbwebb-kurser/python/me/kmom10/adventure/fas/movable.py",
+		"/C/Program Files/Cygwin/home/BarryB/dbwebb-kurser/python/me/kmom10/adventure/fas/game.py",
+		"/C/Users/Arvid/Documents/GitHub/Autonomous-agents/SharpSteer2-master/readme.md",
+		"/C/Users/Arvid/Desktop/HeyThere/HeyThere.lua",
+		"/C/Program Files/Cygwin/home/BarryB/dbwebb-kurser/python/me/kmom10/adventure/fas/verb.py",
+		"/C/Program Files/Cygwin/home/BarryB/dbwebb-kurser/python/me/kmom10/adventure/fas/pruttapa/room.py",
+		"/C/Program Files/Cygwin/home/BarryB/dbwebb-kurser/python/me/kmom10/adventure/fas/createTable.py",
+		"/C/Program Files/Cygwin/home/BarryB/dbwebb-kurser/python/me/kmom10/adventure/fas/pruttapa/game.py",
+		"/C/Program Files/Cygwin/home/BarryB/dbwebb-kurser/python/me/kmom10/adventure/fas/pruttapa/items.py",
+		"/C/Program Files/Cygwin/home/BarryB/dbwebb-kurser/python/me/kmom10/adventure/NewAgain/objects.json",
+		"/C/Program Files/Cygwin/home/BarryB/dbwebb-kurser/python/me/kmom10/adventure/new/connection.py",
+		"/C/Program Files/Cygwin/home/BarryB/dbwebb-kurser/python/me/kmom10/adventure/new/room.py",
+		"/C/Program Files/Cygwin/home/BarryB/dbwebb-kurser/python/me/kmom10/adventure/new/item.py",
+		"/C/Program Files/Cygwin/home/BarryB/dbwebb-kurser/python/me/kmom10/adventure/new/player.py",
+		"/C/Program Files/Cygwin/home/BarryB/dbwebb-kurser/python/me/kmom10/adventure/new/test.py",
+		"/C/Program Files/Cygwin/home/BarryB/dbwebb-kurser/python/me/kmom10/adventure/new/game.py",
+		"/C/Program Files/Cygwin/home/BarryB/dbwebb-kurser/python/me/kmom10/adventure/new/adventure.py",
+		"/C/Program Files/Cygwin/home/BarryB/dbwebb-kurser/python/me/kmom10/adventure/actions.py",
+		"/C/Program Files/Cygwin/home/BarryB/dbwebb-kurser/python/me/kmom10/adventure/player.py",
+		"/C/Program Files/Cygwin/home/BarryB/dbwebb-kurser/python/me/kmom10/adventure/connection.py",
+		"/C/Program Files/Cygwin/home/BarryB/dbwebb-kurser/python/me/kmom10/adventure/Room.py",
+		"/C/Program Files/Cygwin/home/BarryB/dbwebb-kurser/python/me/kmom10/adventure/item.py",
+		"/C/Program Files/Cygwin/home/BarryB/dbwebb-kurser/python/me/kmom10/adventure/adventure.py",
+		"/C/Program Files/Cygwin/home/BarryB/dbwebb-kurser/python/me/kmom10/adventure/items.py",
+		"/C/Program Files/Cygwin/home/BarryB/dbwebb-kurser/python/me/kmom10/adventure/settings.py",
+		"/C/Users/Arvid/AppData/Roaming/Sublime Text 3/Packages/Anaconda/Anaconda.sublime-settings",
+		"/C/Users/Arvid/AppData/Roaming/Sublime Text 3/Packages/User/Python.sublime-settings",
+		"/C/Users/Arvid/AppData/Roaming/Sublime Text 3/Packages/User/Anaconda.sublime-settings",
+		"/C/Users/Arvid/AppData/Roaming/Sublime Text 3/Packages/Anaconda/README.md",
+		"/C/Program Files/Cygwin/home/BarryB/dbwebb-kurser/python/me/kmom06/marvin5/main.py",
+		"/C/Program Files/Cygwin/home/BarryB/dbwebb-kurser/python/me/kmom10/adventure/test.py",
+		"/D/Nedladdat/adventuregame.py",
+		"/C/Program Files (x86)/World of Warcraft/Interface/AddOns/InterruptBar/InterruptBar.lua",
+		"/C/Program Files (x86)/World of Warcraft/Interface/AddOns/Breeze/Breeze.lua",
+		"/C/Program Files (x86)/World of Warcraft/Interface/AddOns/Recount/Recount.lua",
+		"/C/Program Files (x86)/World of Warcraft/Interface/AddOns/Gladius/Options.lua",
+		"/C/Program Files (x86)/World of Warcraft/Interface/AddOns/Gladius/Gladius.lua",
+		"/C/Program Files (x86)/World of Warcraft/Interface/AddOns/Gladius/Modules/Layout.lua",
+		"/D/Nedladdat/WoW_Interface_enUS/AddOns/Blizzard_TalentUI/Localization.lua",
+		"/D/Nedladdat/WoW_Interface_enUS/AddOns/Blizzard_TalentUI/Blizzard_TalentUI.lua",
+		"/D/Nedladdat/WoW_Interface_enUS/AddOns/Blizzard_ArenaUI/Blizzard_ArenaUI.lua",
+		"/C/Program Files/Cygwin/home/BarryB/dbwebb-kurser/python/me/kmom06/marvin5/marvin-cli.py",
+		"/C/Program Files/Cygwin/home/BarryB/dbwebb-kurser/python/me/kmom10/adventure/README.md",
+		"/C/Program Files/Cygwin/home/BarryB/dbwebb-kurser/python/me/kmom10/README.md",
+		"/C/Program Files/Cygwin/home/BarryB/dbwebb-kurser/python/me/kmom06/marvin5/marvin.py",
+		"/C/Program Files/Cygwin/home/BarryB/dbwebb-kurser/python/me/kmom06/marvin5/ping.py",
+		"/C/Users/Arvid/Dropbox/Databassystem/DS_XML.xml",
+		"/C/Users/Arvid/Dropbox/Databassystem/InsättningsSVAAAAR.txt",
+		"/C/Users/Arvid/Dropbox/Databassystem/DBS_Lab.sql",
+		"/C/Users/Arvid/Documents/GitHub/Fluid-Simulations/HaxeDoll/src/Main.hx",
+		"/C/Users/Arvid/Documents/GitHub/Fluid-Simulations/HaxeDoll/src/ragdoll/RenderUtil.hx",
+		"/C/Users/Arvid/Documents/GitHub/Fluid-Simulations/HaxeDoll/src/ragdoll/Constraint.hx",
+		"/C/Users/Arvid/Documents/GitHub/Fluid-Simulations/HaxeDoll/src/ragdoll/Skeleton.hx",
+		"/C/Users/Arvid/Documents/GitHub/Fluid-Simulations/HaxeDoll/src/ragdoll/PointMass.hx",
+		"/C/Users/Arvid/Documents/GitHub/Fluid-Simulations/HaxeDoll/project.flow",
+		"/C/Users/Arvid/Documents/Kmom06.txt",
+		"/C/Program Files/Cygwin/home/BarryB/dbwebb-kurser/python/me/me.py",
+		"/C/Program Files/Cygwin/home/BarryB/dbwebb-kurser/python/me/redovisning.py",
+		"/C/Program Files/Cygwin/home/BarryB/ez_setup.py",
+		"/C/Program Files/Cygwin/home/BarryB/get-pip.py",
+		"/D/Nedladdat/distribute-0.7.3/distribute-0.7.3/setup.py",
+		"/D/Program/Cygwin/home/BarryB/ez_setup.py",
+		"/D/Program/Cygwin/home/BarryB/get-pip.py",
+		"/D/Nedladdat/Buckland_AIExecutables/Programming Game AI by Example - Executables/Raven/Params.lua",
+		"/D/Program/Cygwin/home/BarryB/dbwebb-kurser/python/get-pip.py",
+		"/D/Program/Cygwin/home/BarryB/dbwebb-kurser/python/me/kmom03/marvin2/main.py",
+		"/D/Program/Cygwin/home/BarryB/dbwebb-kurser/python/me/kmom05/game2/Game.py",
+		"/D/Program/Cygwin/home/BarryB/dbwebb-kurser/python/me/kmom05/game2/retro.py",
+		"/D/Program/Cygwin/home/BarryB/dbwebb-kurser/python/me/kmom05/game2/main.py",
+		"/C/Users/Arvid/Documents/Visual Studio 2013/Projects/RainfallEngine/RainfallEngine/Shaders/colorShading.vert",
+		"/C/Users/Arvid/Documents/Visual Studio 2013/Projects/RainfallEngine/RainfallEngine/Shaders/colorShading.frag",
+		"/D/Program/Cygwin/home/BarryB/dbwebb-kurser/python/me/kmom05/game2/Entity.py",
+		"/D/Program/Cygwin/home/BarryB/dbwebb-kurser/python/me/kmom05/game2/Player.py",
+		"/D/Nedladdat/Selene-master/Selene-master/README.md",
+		"/C/Users/Arvid/Documents/Visual Studio 2013/Projects/RainfallEngine/Shaders/colorShading.frag",
+		"/C/Users/Arvid/Documents/Visual Studio 2013/Projects/RainfallEngine/Shaders/colorShading.vert",
+		"/D/Nedladdat/BenGraphicsTut8/Shaders/colorShading.vert",
+		"/D/Nedladdat/BenGraphicsTut8/Shaders/colorShading.frag",
+		"/D/Program/Cygwin/home/BarryB/dbwebb-kurser/python/me/kmom05/game2/Pong.py",
+		"/D/Nedladdat/PyngPong/pongblock.py",
+		"/D/Nedladdat/PyngPong/player.py",
+		"/D/Nedladdat/PyngPong/main.py",
+		"/D/Nedladdat/PyngPong/gameObject.py",
+		"/D/Nedladdat/PyngPong/game.py",
+		"/D/Nedladdat/PyngPong/defines.py",
+		"/D/Nedladdat/PyngPong/ai.py",
+		"/D/Program/Cygwin/home/BarryB/dbwebb-kurser/python/me/kmom04/marvin3/main.py",
+		"/D/Program/Cygwin/home/BarryB/dbwebb-kurser/python/me/kmom05/lab4/answer.py",
+		"/D/Program/Cygwin/home/BarryB/dbwebb-kurser/python/me/kmom05/game2/README.md",
+		"/D/Nedladdat/pongblock.py",
+		"/C/Users/Arvid/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Arvid/AppData/Roaming/Sublime Text 3/Packages/User/Markdown.sublime-settings",
+		"/D/Program/Cygwin/home/BarryB/dbwebb-kurser/python/me/kmom05/game2/Ball.py",
+		"/C/Users/Arvid/Documents/GitHub/Game-of-Life/GameOfLife/src/simulation/Cell.hx",
+		"/C/Users/Arvid/Documents/GitHub/Game-of-Life/GameOfLife/src/simulation/Grid.hx",
+		"/C/Users/Arvid/Documents/GitHub/Game-of-Life/GameOfLife/src/simulation/Simulation.hx",
+		"/C/Users/Arvid/Documents/GitHub/Game-of-Life/GameOfLife/src/Main.hx",
+		"/C/Users/Arvid/Documents/GitHub/Game-of-Life/GameOfLife/project.flow",
+		"/C/HaxeToolkit/haxe/lib/luxe/git/samples/empty/project.flow",
+		"/C/HaxeToolkit/haxe/lib/luxe/git/samples/empty/src/Main.hx",
+		"/D/Nedladdat/Knytt 102/Settings.ini",
+		"/C/Users/Arvid/Documents/GitHub/Haxetris/Haxetris/project.flow",
+		"/C/Users/Arvid/Documents/GitHub/Artificiell-Intelligence-Course/Scripting/Scripting/Entity.lua",
+		"/C/Users/Arvid/Documents/GitHub/Artificiell-Intelligence-Course/Scripting/Scripting/Entity_01.lua",
+		"/C/Users/Arvid/Documents/GitHub/Artificiell-Intelligence-Course/Scripting/Scripting/Player.lua",
+		"/C/Users/Arvid/Documents/GitHub/Haxetris/Haxetris/src/Main.hx",
+		"/C/Users/Arvid/Documents/GitHub/Map-Generator/Map Generator/src/mapgen/Generator.hx",
+		"/C/Users/Arvid/Documents/GitHub/Map-Generator/Map Generator/src/com/nodename/delaunay/SiteList.hx",
+		"/C/Users/Arvid/Documents/GitHub/Map-Generator/Map Generator/src/com/nodename/delaunay/Vertex.hx",
+		"/C/Users/Arvid/Documents/GitHub/Map-Generator/Map Generator/src/com/nodename/geom/LineSegment.hx",
+		"/C/Users/Arvid/Documents/GitHub/Map-Generator/Map Generator/src/com/nodename/geom/Polygon.hx",
+		"/C/Users/Arvid/Documents/GitHub/Map-Generator/Map Generator/src/com/nodename/geom/Circle.hx",
+		"/C/Users/Arvid/Documents/GitHub/Map-Generator/Map Generator/src/com/nodename/geom/Winding.hx",
+		"/C/Users/Arvid/Documents/GitHub/Map-Generator/Map Generator/src/Main.hx"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"<project>"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"act_list_verbs",
+			"    def __init__(self, name):",
+			"act_open",
+			"act_go1",
+			"act_examine1",
+			"act_look",
+			"act_inventory",
+			"act_take1",
+			"add_verb",
+			"style_text",
+			"proper_list_from_dict",
+			"take",
+			"act_take1",
+			"Player",
+			"SPECIALNUMBER",
+			"special_move",
+			"inventory",
+			"define_direction",
+			"common_aliases",
+			"fält",
+			"360",
+			"640",
+			"		\n",
+			"exec",
+			"uname",
+			"code",
+			"unicode",
+			"s",
+			"_pongBlockFPS",
+			"sleep",
+			"linting",
+			"PATH",
+			"python",
+			"Point",
+			"pair",
+			"connect_input",
+			"create_player_animation",
+			"create_player",
+			"create_apartment",
+			"assets_loaded",
+			"json_asset",
+			"moveSpeed",
+			"move_speed",
+			"max_right",
+			"false",
+			"        ",
+			"\n       ",
+			"max_left",
+			"maxLeft",
+			"max_left",
+			"<<<<<<<",
+			"modulec",
+			"modulex",
+			"modulew",
+			"moduled",
+			"module directx.",
+			"Repaint",
+			"skin",
+			"previewButtonTex",
+			"skin",
+			"EvalCurve",
+			"colorIndex"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"module c",
+			"module x",
+			"module w",
+			"module d",
+			"module"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "project.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

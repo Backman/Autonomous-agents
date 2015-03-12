@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{3a6b47ee-a67c-4a17-b072-f951b7dc6e1b}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{5ed1668f-2aa0-487a-bf73-e935ac2bfdc0}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="plugins">
+      <UniqueIdentifier>{7ff14aac-9e0c-4ac8-8e80-d45b79580743}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\OpenSteerDemo.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\plugins\Boids.cpp">
+      <Filter>plugins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\plugins\CaptureTheFlag.cpp">
+      <Filter>plugins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\plugins\LowSpeedTurn.cpp">
+      <Filter>plugins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\plugins\MapDrive.cpp">
+      <Filter>plugins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\plugins\MultiplePursuit.cpp">
+      <Filter>plugins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\plugins\OneTurning.cpp">
+      <Filter>plugins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\plugins\Pedestrian.cpp">
+      <Filter>plugins</Filter>
+    </ClCompile>
+    <ClCompile Include="..\plugins\Soccer.cpp">
+      <Filter>plugins</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="OpenSteerDemo.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SteerTest.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+</Project>
