@@ -32,6 +32,12 @@ namespace SharpSteer
 				}
 
 				closedList.Add(currentNode);
+
+				if (!currentNode.Walkable)
+				{
+					continue;
+				}
+
 				foreach (Node n in currentNode.Neighbours)
 				{
 					float newG = currentNode.G + Node.GetCost(currentNode, n);

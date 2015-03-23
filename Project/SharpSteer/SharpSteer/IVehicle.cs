@@ -46,7 +46,7 @@ namespace SharpSteer
 		/// <summary>
 		/// Max speed of the vehicle
 		/// </summary>
-		float MaxSpeed { get; set; }
+		float MaxVelocity { get; set; }
 		
 		/// <summary>
 		/// The Inverse mass of the vehicle

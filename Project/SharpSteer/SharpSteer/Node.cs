@@ -22,13 +22,8 @@ namespace SharpSteer
 		{
 			Vector2 n1Pos = n1.Position;
 			Vector2 n2Pos = n2.Position;
-
-			if (n1Pos.X != n2Pos.X || n1Pos.Y != n2Pos.Y)
-			{
-				return 2f;
-			}
-
-			return 1f;
+			
+			return n1Pos.X != n2Pos.X || n1Pos.Y != n2Pos.Y ? 2f : 1f;
 		}
 	}
 }

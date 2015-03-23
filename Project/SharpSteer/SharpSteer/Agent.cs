@@ -13,23 +13,25 @@ namespace SharpSteer
 	{
 		private SteeringManager _steeringManager;
 
-		public Agent(Vector2 pos, float radius, float maxSpeed = 100f, float maxForce = 100f)
+		public Agent(Vector2 pos, float radius, float maxSpeed = 100f, float maxForce = 100000f)
 		{
 			Position = pos;
 			Radius = radius;
-			MaxSpeed = maxSpeed;
+			MaxVelocity = maxSpeed;
 			MaxForce = maxForce;
-			Mass = 1f;
+			Mass = 5f;
 
 			_steeringManager = new SteeringManager(this);
 		}
 
-		public void Tick(float elapsedTime)
+		public void Tick(Game1 game, float elapsedTime)
 		{
 			MouseState mouse = Mouse.GetState();
 			Vector2 mousePos = new Vector2(mouse.Position.X, mouse.Position.Y);
 
-			_steeringManager.Follow(Game1.flowField);
+			//_steeringManager.FlowFieldFollow(Game1.flowField);
+
+			_steeringManager.Seek(mousePos);
 
 			_steeringManager.Update(elapsedTime);
 

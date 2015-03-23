@@ -81,7 +81,7 @@ namespace SharpSteer
 		/// <summary>
 		/// Max speed of the vehicle
 		/// </summary>
-		public float MaxSpeed
+		public float MaxVelocity
 		{
 			get { return _maxSpeed; }
 			set { _maxSpeed = value; }

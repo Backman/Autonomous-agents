@@ -9,6 +9,8 @@ using Microsoft.Xna.Framework.Storage;
 using Microsoft.Xna.Framework.GamerServices;
 #endregion
 
+using Bitmap = System.Drawing.Bitmap;
+
 namespace SharpSteer
 {
 	/// <summary>
@@ -18,15 +20,18 @@ namespace SharpSteer
 	{
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
-		Agent agent;
-		Grid grid;
-		Path path;
-		int gridSize = 80;
-		int windowWidth = 1280;
-		int windowHeight = 720;
-		public static FlowField flowField;
-		MouseState oldMouseState;
-		private Node _lastNode;
+
+		int _windowWidth = 1024;
+		int _windowHeight = 768;
+
+		private Menu _menuWindow;
+		private Grid _grid;
+		private int _cellSize = 8;
+		private Path _currentPath;
+
+		private MouseState _prevMouseState;
+
+		Texture2D map;
 
 		public Game1()
 			: base()
@@ -44,18 +49,50 @@ namespace SharpSteer
 		protected override void Initialize()
 		{
 			// TODO: Add your initialization logic here
-			graphics.PreferredBackBufferWidth = windowWidth;
-			graphics.PreferredBackBufferHeight = windowHeight;
+			graphics.PreferredBackBufferWidth = _windowWidth;
+			graphics.PreferredBackBufferHeight = _windowHeight;
 			graphics.ApplyChanges();
 
 
 			IsMouseVisible = true;
-			agent = new Agent(new Vector2(300f), 10f);
-			flowField = new FlowField(Window.ClientBounds.Width, Window.ClientBounds.Height, 10);
-			oldMouseState = Mouse.GetState();
-			grid = Grid.CreateRandomGrid(windowWidth / gridSize, windowHeight / gridSize, gridSize);
+
+			_menuWindow = new Menu();
+			Messenger.AddListener<string>("OnLoadMapButton", OnLoadMap);
+			Messenger.AddListener<bool>("OnShowGridToggle", OnShowGridToggle);
+			Messenger.AddListener("OnExit", OnExit);
+			
+			_menuWindow.Show();
+
+			_grid = new Grid(_windowWidth / _cellSize, _windowHeight / _cellSize, _cellSize);
+			Bitmap bitmap = Bitmap.FromFile("Maps/Test.png") as Bitmap;
+			_grid.CreateFromBitmap(bitmap);
+
+			_prevMouseState = Mouse.GetState();
 
 			base.Initialize();
+		}
+
+		private void OnLoadMap(string mapPath)
+		{
+			try
+			{
+				var file = System.IO.File.OpenRead("Maps/" + mapPath + ".png");
+				map = Texture2D.FromStream(GraphicsDevice, file);
+			}
+			catch(Exception e)
+			{
+				Console.WriteLine(e.Message);
+			}
+		}
+
+		private void OnShowGridToggle(bool value)
+		{
+			_grid.ShowGrid(value);
+		}
+
+		private void OnExit()
+		{
+			Exit();
 		}
 
 		/// <summary>
@@ -77,6 +114,7 @@ namespace SharpSteer
 		protected override void UnloadContent()
 		{
 			// TODO: Unload any non ContentManager content here
+			Content.Unload();
 		}
 
 		/// <summary>
@@ -91,20 +129,19 @@ namespace SharpSteer
 
 			// TODO: Add your update logic here
 			float elapsedTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
-			MouseState newMouseState = Mouse.GetState();
 
-			if (newMouseState.LeftButton == ButtonState.Pressed && oldMouseState.LeftButton == ButtonState.Released)
+			MouseState mouseState = Mouse.GetState();
+
+			if (mouseState.LeftButton == ButtonState.Pressed && _prevMouseState.LeftButton == ButtonState.Released)
 			{
-				Vector2 mousePos = new Vector2(newMouseState.Position.X, newMouseState.Position.Y);
+				Vector2 mousePos = new Vector2(mouseState.Position.X, mouseState.Position.Y);
 
-				//grid.ToggleWalkable(mousePos);
+				Node startNode = _grid.GetNode(Vector2.One * 10f);
+				Node endNode = _grid.GetNode(mousePos);
 
-				path = AStar.Solve(grid.GetNode(Vector2.One * 10f), grid.GetNode(mousePos), grid);
+				_currentPath = AStar.Solve(startNode, endNode, _grid);
 			}
-
-			//agent.Tick(elapsedTime);
-
-			oldMouseState = newMouseState;
+			
 
 			base.Update(gameTime);
 		}
@@ -119,13 +156,17 @@ namespace SharpSteer
 
 			// TODO: Add your drawing code here
 			spriteBatch.Begin();
-			//flowField.DrawField(spriteBatch);
-			//agent.Draw(spriteBatch);
-			grid.Draw(spriteBatch, Color.Green);
 
-			if (path != null)
+			_grid.Draw(spriteBatch, Color.Red);
+
+			if (map != null)
 			{
-				path.Draw(spriteBatch, Color.Black);
+				spriteBatch.Draw(map, Vector2.Zero, Color.White);
+			}
+
+			if (_currentPath != null)
+			{
+				_currentPath.Draw(spriteBatch, Color.Black);
 			}
 
 			spriteBatch.End();

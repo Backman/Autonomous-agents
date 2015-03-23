@@ -9,58 +9,45 @@ namespace SharpSteer
 {
 	public class Grid
 	{
+		private bool _showGrid = false;
+		
 		private int _cellSize;
 		private int _width;
 		private int _height;
+		private HashSet<Node> _walkableNodes = new HashSet<Node>();
+		private HashSet<Node> _blockedNodes = new HashSet<Node>();
 		private Node[,] _nodes;
 
-		private static Vector2[] neighbourSetFourDir = { new Vector2(1f, 0f), new Vector2(-1f, 0f), new Vector2(0f, -1f), new Vector2(0f, 1f) };
-
-		private static Vector2[] neighbourSetEightDir = { new Vector2(1f, 0f), new Vector2(-1f, 0f),
-														  new Vector2(0f, -1f), new Vector2(0f, 1f),
-														  new Vector2(1f, 1f), new Vector2(1f, -1f),
-														  new Vector2(-1f, 1f), new Vector2(-1f, -1f) };
+		private static Vector2[] neighbourSet = { new Vector2(1f, 0f), new Vector2(-1f, 0f),
+												  new Vector2(0f, -1f), new Vector2(0f, 1f),
+												  new Vector2(1f, 1f), new Vector2(1f, -1f),
+												  new Vector2(-1f, 1f), new Vector2(-1f, -1f) };
 
 		public int TotalSize
 		{
 			get { return _width * _height; }
 		}
 
-		public Grid(int[,] map, int size)
+		public Grid(int width, int height, int cellSize)
 		{
-			Generate(map, size);
+			_width = width;
+			_height = height;
+			_cellSize = cellSize;
+
+			InitGrid();
 		}
 
-		public void Generate(int[,] map, int size)
+		private void InitGrid()
 		{
-			_width = map.GetLength(0);
-			_height = map.GetLength(1);
-			_cellSize = size;
+			_nodes = new Node[_width, _height];
 
-			GenerateNodes(_width, _height, _cellSize, map);
-			GenerateNodeNeighbours();
-		}
-
-		private void GenerateNodes(int width, int height, int cellSize, int[,] map)
-		{
-			_nodes = new Node[width, height];
-
-			for (int x = 0; x < width; x++)
+			for (int x = 0; x < _width; x++)
 			{
-				for (int y = 0; y < height; y++)
+				for (int y = 0; y < _height; y++)
 				{
 					Node node = new Node();
-					node.Position = new Vector2(x * cellSize, y * cellSize);
-
-					int number = map[x, y];
-					if (number > 0)
-					{
-						node.Walkable = false;
-					}
-					else
-					{
-						node.Walkable = true;
-					}
+					node.Position = new Vector2(x * _cellSize, y * _cellSize);
+					node.Walkable = true;
 
 					_nodes[x, y] = node;
 				}
@@ -74,18 +61,35 @@ namespace SharpSteer
 				for (int y = 0; y < _height; y++)
 				{
 					Node node = _nodes[x, y];
-					foreach (Vector2 v in neighbourSetEightDir)
+					foreach (Vector2 v in neighbourSet)
 					{
 						float xPos = node.Position.X + v.X * _cellSize;
 						float yPos = node.Position.Y + v.Y * _cellSize;
-						if (IsOnMap(xPos, yPos))
+						
+						Vector2 pos = new Vector2(xPos, yPos);
+
+						Node neighbour;
+						if (IsOnMap(xPos, yPos) && (neighbour = GetNode(pos)).Walkable)
 						{
-							Vector2 pos = new Vector2(xPos, yPos);
-							node.Neighbours.Add(GetNode(pos));
+							node.Neighbours.Add(neighbour);
 						}
 					}
 				}
 			}
+
+			//foreach (Vector2 v in neighbourSet)
+			//{
+			//	float xPos = node.Position.X + v.X * _cellSize;
+			//	float yPos = node.Position.Y + v.Y * _cellSize;
+
+			//	Vector2 pos = new Vector2(xPos, yPos);
+
+			//	Node neighbour;
+			//	if (IsOnMap(xPos, yPos) && (neighbour = GetNode(pos)).Walkable)
+			//	{
+			//		node.Neighbours.Add(neighbour);
+			//	}
+			//}
 		}
 
 		public bool IsOnMap(float x, float y)
@@ -103,44 +107,65 @@ namespace SharpSteer
 			return ret;
 		}
 
-		public void SetWalkable(Vector2 position, bool walkable)
+		public void ShowGrid(bool value)
 		{
-			Node node = GetNode(position);
-			node.Walkable = walkable;
-		}
-
-		public void ToggleWalkable(Vector2 position)
-		{
-			Node node = GetNode(position);
-			node.Walkable = !node.Walkable;
+			_showGrid = value;
 		}
 
 		public void Draw(SpriteBatch spriteBatch, Color color)
 		{
-			foreach (Node node in _nodes)
+			for (int x = 0; x < _width; x++)
 			{
-				//if (!node.Walkable)
+				for (int y = 0; y < _height; y++)
 				{
-					spriteBatch.DrawRectangle(node.Position, Vector2.One * _cellSize, color);
+					Node n = _nodes[x, y];
+					if (!n.Walkable)
+					{
+						spriteBatch.DrawRectangle(n.Position, Vector2.One * _cellSize, Color.Green);
+					}
+					else if (n.Walkable && _showGrid)
+					{
+						spriteBatch.DrawRectangle(n.Position, Vector2.One * _cellSize, color);
+					}
 				}
 			}
 		}
 
-		public static Grid CreateRandomGrid(int width, int height, int size)
+		public void CreateFromBitmap(System.Drawing.Bitmap bitmap)
 		{
-			int[,] map = new int[width, height];
+			int w = bitmap.Width / _width;
+			int h = bitmap.Height / _height;
+			int black = System.Drawing.Color.Black.ToArgb();
 
-			for (int x = 0; x < width; x++)
+			for (int y = 0; y < _height; ++y)
 			{
-				for (int y = 0; y < height; y++)
+				for (int x = 0; x < _width; ++x)
 				{
-					map[x, y] = Helpers.Maths.random.Next(0, 2);
+					int pX = x * w;
+					int pY = y * h;
+					System.Drawing.Color pixel = bitmap.GetPixel(pX, pY);
+
+					int ix = x;
+					int iy = y;
+
+					Node n = new Node();
+					n.Position = new Vector2(x * _cellSize, y * _cellSize);
+
+					Node node = _nodes[ix, iy];
+					if (!pixel.ToArgb().Equals(black))
+					{
+						_walkableNodes.Add(n);
+						node.Walkable = true;
+					}
+					else
+					{
+						_blockedNodes.Add(n);
+						node.Walkable = false;
+					}
 				}
 			}
 
-			Grid ret = new Grid(map, size);
-
-			return ret;
+			GenerateNodeNeighbours();
 		}
 	}
 }
