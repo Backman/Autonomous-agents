@@ -32,14 +32,14 @@ namespace SharpSteer
 			}
 		}
 
-		public void Draw(SpriteBatch spriteBatch)
+		public void Draw(SpriteBatch spriteBatch, Color color, float thickness = 1f)
 		{
 			for (int i = 1; i < _path.Count; ++i)
 			{
 				Node n1 = _path[i - 1];
 				Node n2 = _path[i];
 
-				spriteBatch.DrawLine(n1.Position, n2.Position, Color.Red, 1f);
+				spriteBatch.DrawLine(n1.Position, n2.Position, color, thickness);
 			}
 		}
 	}

@@ -16,6 +16,11 @@ namespace SharpSteer
 
 		private static Vector2[] neighbourSetFourDir = { new Vector2(1f, 0f), new Vector2(-1f, 0f), new Vector2(0f, -1f), new Vector2(0f, 1f) };
 
+		private static Vector2[] neighbourSetEightDir = { new Vector2(1f, 0f), new Vector2(-1f, 0f),
+														  new Vector2(0f, -1f), new Vector2(0f, 1f),
+														  new Vector2(1f, 1f), new Vector2(1f, -1f),
+														  new Vector2(-1f, 1f), new Vector2(-1f, -1f) };
+
 		public int TotalSize
 		{
 			get { return _width * _height; }
@@ -69,7 +74,7 @@ namespace SharpSteer
 				for (int y = 0; y < _height; y++)
 				{
 					Node node = _nodes[x, y];
-					foreach (Vector2 v in neighbourSetFourDir)
+					foreach (Vector2 v in neighbourSetEightDir)
 					{
 						float xPos = node.Position.X + v.X * _cellSize;
 						float yPos = node.Position.Y + v.Y * _cellSize;
@@ -110,13 +115,13 @@ namespace SharpSteer
 			node.Walkable = !node.Walkable;
 		}
 
-		public void Draw(SpriteBatch spriteBatch)
+		public void Draw(SpriteBatch spriteBatch, Color color)
 		{
 			foreach (Node node in _nodes)
 			{
 				//if (!node.Walkable)
 				{
-					spriteBatch.DrawRectangle(node.Position, Vector2.One * _cellSize, Color.White);
+					spriteBatch.DrawRectangle(node.Position, Vector2.One * _cellSize, color);
 				}
 			}
 		}

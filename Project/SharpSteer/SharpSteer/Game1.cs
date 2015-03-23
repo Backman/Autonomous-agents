@@ -121,11 +121,11 @@ namespace SharpSteer
 			spriteBatch.Begin();
 			//flowField.DrawField(spriteBatch);
 			//agent.Draw(spriteBatch);
-			grid.Draw(spriteBatch);
+			grid.Draw(spriteBatch, Color.Green);
 
 			if (path != null)
 			{
-				path.Draw(spriteBatch);
+				path.Draw(spriteBatch, Color.Black);
 			}
 
 			spriteBatch.End();

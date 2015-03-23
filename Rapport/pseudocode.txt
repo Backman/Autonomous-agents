@@ -1,0 +1,193 @@
+vector2D function seek(vector2D target)
+{
+	var desiredVelocity = target - agentPosition;
+	var force = desiredVelocity - agentVelocity;
+	return force;
+}
+
+vector2D function arrive(vector2D target, float slowingDistance)
+{
+	var offset = target - agentPosition;
+	var magnitude = offset.magnitude;
+	
+	float rampedSpeed = agentMaxVelocity * (magnitude / slowingDistance);
+	float clippedSpeed = min(rampedSpeed, agentMaxVelocity);
+	var desiredVelocity = (clippedSpeed / magnitude) * offset;
+	
+	var force = desiredVelocity - agentVelocity;
+	return force;
+}
+
+vector2D function wallAvoidance(array<wall> walls)
+{
+	var force;
+	var closestWall;
+	var intersectionPoint;
+	var closestPoint;
+	var distanceToThisIntersection = 0;
+	var distanceToClosestIntersection = MaxNumber;
+	
+	foreach(feeler in agentFeelers)
+	{
+		foreach(wall in walls)
+		{
+			if(lineIntersection(agentPosition, feeler, wall.from, wall.to, 
+								distanceToThisIntersection, intersectionPoint)
+			{
+				if(distanceToThisIntersection < distanceToClosestIntersection)
+				{
+					distanceToClosestIntersection = distanceToThisIntersection;
+					closestWall = wall;
+					closestPoint = intersectionPoint;
+				}
+			}
+		}
+		
+		if(closestWall != null)
+		{
+			var overShoot = feeler.position - closestPoint;
+			force = closestWall.normal * overShoot.magnitude;
+		}
+	}
+	
+	return force;
+}
+
+vector2D function followPath(Path path)
+{
+	var predict = agentVelocity;
+	var force;
+	predict.normalize;
+	predict *= 25;
+	var predictedPosition = agentPosition + predict;
+	
+	var closestDistance = MaxNumber;
+	var closestPoint;
+	
+	foreach(line in path.line)
+	{
+		var closestPointOnLine = line.closestPoint(predictedPosition);
+		
+		var offset = predictedPosition - closetPointOnLine;
+		var magnitude = offest.magnitude;
+		
+		if(magnitude < closestDistance)
+		{
+			closestDistance = magnitude;
+			closestPoint = closestPointOnLine;
+			var lineDirection = line.to - line.from;
+			lineDirection.normalize();
+			lineDirection *= 10;
+			closestPoint += lineDirection;
+		}
+	}
+	
+	force = seek(closestPoint);
+		
+	return force;
+}
+
+vector2D function flowFieldFollow(FlowField flowField)
+{
+	var desiredVelocity = flowField.getDirectionFromCell(agentPosition);
+	desiredVelocity *= agentMaxVelocity;
+	
+	var force = desiredVelocity - agentVelocity;
+	return force;
+}
+
+vector2D function separation(array<agents> neighbors)
+{
+	var force;
+	
+	foreach(neighbor in neighbors)
+	{
+		var offset = agentPosition - neighbor.position;
+		force += offset.normalize/offest.magnitude;
+	}
+	
+	return force;
+}
+
+vector2D function alignment(array<agents> neighbors)
+{
+	var force;
+	var averageHeading;
+	var neighborCount = neighbor.size;
+	
+	foreach(neighbor in neighbors)
+	{
+		averageHeading += neighbor.heading;
+	}
+	
+	if(neighborCount > 0)
+	{
+		averageHeading = averageHeading / neighborCount;
+		force = averageHeading - agentHeading;
+	}
+	
+	return force;
+}
+
+vector2D function cohesion(array<agents> neighbors)
+{
+	var force;
+	var centerOfMass;
+	var neighborCount = neighbor.size;
+	
+	foreach(neighbor in neighbors)
+	{
+		centerOfMass += neighbor.position;
+	}
+	
+	if(neighborCount > 0)
+	{
+		centerOfMass = centerOfMass / neighborCount;
+		force = seek(centerOfMass);
+	}
+	
+	return force;
+}
+
+vector2D function weightedTruncatedSum()
+{
+	var force;
+	foreach(behavior in behaviors)
+	{
+		force += behavior.force * behavior.weight;
+	}
+	
+	force.truncate(agentMaxForce);
+	return force;
+}
+
+vector2D function weightedTruncatedSumWithPriority()
+{	
+	var force;
+	foreach(behavior in behaviorsPriorityQueue)
+	{
+		var forceSoFar = force.magnitude;
+		var forceRemaining = agentMaxForce - forceSoFar;
+		
+		if(forceRemaining <= 0)
+		{
+			break;
+		}
+		
+		var forceToAdd = behavior.force * behavior.weight;
+		
+		if(forceToAdd.magnitude < forceRemaining)
+		{
+			force += forceToAdd;
+		}
+		else
+		{
+			force += forceToAdd.normalize * forceRemaining;
+		}
+	}
+	
+	return force;
+}
+
+
+
